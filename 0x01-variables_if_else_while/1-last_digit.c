@@ -37,7 +37,7 @@ int main(void)
 		text = txt;
 	}
 
-	printf("Last digit of %i is %i and %s", n, ld, text);
+	printf("Last digit of %i is %i and %s\n", n, ld, text);
 
 	return (0);
 }
