@@ -21,20 +21,24 @@ int main(void)
 	if (ld > 5)
 	{
 		char txt[] = "is greater than 5";
+
 		text = txt;
+
 	}
 	else if (ld == 0)
 	{
 		char txt[] = "is 0";
+
 		text = txt;
 	}
 	else
 	{
 		char txt[] = "is less than 6 and not 0";
+
 		text = txt;
 	}
 
-	printf("Last digit of %i is %i and %s", n, ld, text);
+	printf("Last digit of %i is %i and %s\n", n, ld, text);
 
 	return (0);
 }
