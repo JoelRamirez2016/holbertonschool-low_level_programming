@@ -20,6 +20,8 @@ int main(void)
 			{
 				for (w = j + 1; w <= '9'; w++)
 				{
+					if (i == k && j == w)
+						continue;
 					putchar(i);
 					putchar(j);
 					putchar(' ');
@@ -32,7 +34,6 @@ int main(void)
 						putchar(' ');
 					}
 				}
-				w = '0';
 			}
 		}
 	}
