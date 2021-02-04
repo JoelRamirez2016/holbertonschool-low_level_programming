@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
 
 /**
@@ -20,11 +19,11 @@ int main(void)
 			putchar(i);
 			putchar(j);
 
-			if (!(i == '9' && i == '9'))
-			{
-				putchar(",");
-				putchar(" ");
-			}
+			if (i == '9' && j == '9')
+				break;
+			putchar(",");
+			putchar(" ");
+
 		}
 	}
 	putchar('\n');
