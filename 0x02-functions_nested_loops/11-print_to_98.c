@@ -3,7 +3,6 @@
 /**
  * print_to_98 - print 9 times table in certain format
  * @n: starting number
- * Return: Always 0 (Success)
  */
 
 void print_to_98(int n)
