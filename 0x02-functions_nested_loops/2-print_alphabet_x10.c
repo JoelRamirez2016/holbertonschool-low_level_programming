@@ -1,18 +1,9 @@
-#include <stdlib.h>
+#include "holberton.h"
 
 /**
- * main - Entry point
- * Description: print alphabet lowercase 10 times
+ * print_alphabet - print alphabet lowercase 10 times
  * Return: Always 0 (Success)
  */
-
-int main(void)
-{
-	int i;
-	for (i = 0; i <= 10; i++)
-		print_alphabet();
-	return (0);
-}
 
 void print_alphabet(void)
 {

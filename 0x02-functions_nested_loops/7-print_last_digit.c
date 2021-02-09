@@ -1,24 +1,12 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - Entry point
- * Description: print last digit with absolute value 
+ * print_last_digit - print last digit
  * Return: Always 0 (Success)
  */
-int main(void)
+
+int print_last_digit(int n)
 {
-	int r;
-
-	print_last_digit(98);
-	print_last_digit(0);
-	r = print_last_digit(-1024);
-	putchar('0' + r);
-	putchar('\n');
-	return (0);
-}
-
-
-int print_last_digit(int n){
-	printf("%i", n%10);
-	return (n%10);
+	_putchar((n % 10) + '0');
+	return (n % 10);
 }

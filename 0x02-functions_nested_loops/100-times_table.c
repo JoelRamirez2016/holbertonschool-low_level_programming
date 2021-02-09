@@ -1,30 +1,21 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - Entry point
- * Description: print 9 times table in certain format 
+ * times_table - print n times table in certain format 
  * Return: Always 0 (Success)
  */
-int main(void)
-{
-	// times_table(5);
-	// times_table(62);
-	times_table(12);
-	return (0);
-}
-
 
 int times_table(int n){
-	if ( n > 15 || n < 0)
+	if (n > 15 || n < 0)
 		return 0;
 		
-	int m_er, m_cand, col_1 ;
+	int m_er, m_cand, col_1;
 	
-	for (m_er=0; m_er <= n; m_er++)
+	for (m_er = 0; m_er <= n; m_er++)
 	{
 		col_1 = 1;
 		
-		for (m_cand=0; m_cand <=n; m_cand++)
+		for (m_cand = 0; m_cand <= n; m_cand++)
 		{
 			int centena = (m_cand * m_er)/100;
 			int decena = (m_cand * m_er)/10;

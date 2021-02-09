@@ -1,29 +1,23 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - Entry point
- * Description: prints every minute of the day of Jack Bauer 
+ * jack_bauer - prints every minute of the day of Jack Bauer 
  * Return: Always 0 (Success)
  */
-int main(void)
+
+int jack_bauer(void)
 {
-	jack_bauer();
-	return (0);
-}
-
-
-int jack_bauer(void){
 	int h, m;
-	for (h=00; h < 24 ;h++)
+	for (h = 0; h < 24; h++)
 	{
-		for (m=0; m < 60 ; m++)
+		for (m = 0; m < 60; m++)
 		{
-			putchar((h / 10) + 48);
-			putchar((h % 10) + 48);
-			putchar(':');
-			putchar((m / 10) + 48);
-			putchar((m % 10) + 48);
-			putchar('\n');
+			_putchar((h / 10) + 48);
+			_putchar((h % 10) + 48);
+			_putchar(':');
+			_putchar((m / 10) + 48);
+			_putchar((m % 10) + 48);
+			_putchar('\n');
 		}
 		
 	}

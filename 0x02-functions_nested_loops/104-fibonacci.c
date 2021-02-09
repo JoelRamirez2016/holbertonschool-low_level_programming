@@ -2,7 +2,7 @@
 
 /**
  * main - Entry point
- * Description: print 9 times table in certain format 
+ * Description:  
  * Return: Always 0 (Success)
  */
 int main(void)

@@ -1,8 +1,9 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
  * main - Entry point
- * Description: print 9 times table in certain format 
+ * Description: print the sum of certain even numbers of 
+ * 		fibnacci, starting with 1 and 2
  * Return: Always 0 (Success)
  */
 int main(void)
