@@ -1,4 +1,3 @@
-#include "holberton.h"
 #include <stdio.h>
 
 /**
@@ -9,25 +8,12 @@
 
 int main(void)
 {
-	int result = progresion(3) + progresion(5);
-
-	printf("%i", result);
-	return (result);
-}
-
-/**
- * progresion - Auxiliar funtion
- * Description: prints the sum of all the multiples of n
- * @n: number to progres the progresion
- * Return: Always 0 (Success)
- */
-int progresion(int n)
-{
-	int i, result = 1;
+	int i, result;
 
 	for (i = 0; i < 1024; i++)
-		if (i % n == 0)
+		if ((i % 3 == 0) || (i % 5 == 0))
 			result += i;
 
+	printf("%i", result);
 	return (result);
 }
