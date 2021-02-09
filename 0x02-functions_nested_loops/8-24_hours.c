@@ -5,7 +5,7 @@
  * Return: Always 0 (Success)
  */
 
-int jack_bauer(void)
+void jack_bauer(void)
 {
 	int h, m;
 
@@ -21,5 +21,4 @@ int jack_bauer(void)
 			_putchar('\n');
 		}
 	}
-	return (0);
 }
