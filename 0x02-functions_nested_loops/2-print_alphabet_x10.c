@@ -4,7 +4,6 @@
  * main - Entry point
  * Description: print alphabet lowercase 10 times
  * Return: Always 0 (Success)
- *
  */
 
 int main(void)
