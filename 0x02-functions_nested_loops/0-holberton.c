@@ -1,8 +1,6 @@
 #include "holberton.h"
-#include "holberton.h"
-#include "holberton.h"
 
-{
+int main(){
 	char txt[] = "Holberton";
 	int i = 0;
 
