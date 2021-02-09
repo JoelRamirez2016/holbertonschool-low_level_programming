@@ -2,6 +2,7 @@
 
 /**
  * print_last_digit - print last digit
+ * @n: number to check
  * Return: Always 0 (Success)
  */
 

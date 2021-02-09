@@ -1,7 +1,9 @@
 #include "holberton.h"
 
 /**
- * add - adds two integers 
+ * add - adds two integers
+ * @a: first number to sum
+ * @b: second number to sum
  * Return: Always 0 (Success)
  */
 
