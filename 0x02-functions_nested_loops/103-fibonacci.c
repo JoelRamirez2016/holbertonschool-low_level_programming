@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include <stdio.h>
 
 /**
  * main - Entry point
@@ -9,17 +9,16 @@
 
 int main(void)
 {
-	int i, nextN, sumEven, n1 = 1, n2 = 2;
+	int nextN, sumEven = 0, n1 = 1, n2 = 2;
 
-	for (i = 0; i <= 50; i++)
+	while (nextN < 4000000)
 	{
-		if (sumEven <= 4000000 && sumEven % 2 == 0)
-			sumEven += n1;
 		nextN = n1 + n2;
 		n1 = n2;
 		n2 = nextN;
+		if (nextN <= 4000000 && nextN % 2 == 0)
+			sumEven += nextN;
 	}
-
-	printf("%li, ", n1);
+	printf("%li\n", sumEven);
 	return (0);
 }
