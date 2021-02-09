@@ -13,6 +13,10 @@ int main(void)
 
 	for (i = 0; i <= 50; i++)
 	{
+		if (i)
+			printf(", %li ", n1);
+		else
+			printf("%li", n1);
 		printf("%li, ", n1);
 		nextN = n1 + n2;
 		n1 = n2;
