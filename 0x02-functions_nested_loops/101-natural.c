@@ -24,9 +24,9 @@ int progresion(int n)
 {
 	int result = 1;
 
-	while (result < 2014)
-	{
-		result *= n;
-	}
+	for (i = 0; i < 1024; i++)
+		if (i % n == 0)
+			result += i;
+
 	return (result);
 }
