@@ -1,14 +1,14 @@
 #include "holberton.h"
 
 /**
- * times_table - print n times table in certain format
- * @n: parameter for table times 
+ * print_times_table - print n times table in certain format
+ * @n: parameter for table times
  */
 
-int print_times_table(int n)
+void print_times_table(int n)
 {
 	if (n > 15 || n < 0)
-		return (0);
+		return;
 
 	int m_er, m_cand, col_1;
 
