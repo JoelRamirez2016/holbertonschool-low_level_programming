@@ -2,7 +2,7 @@
 
 /**
  * main - Entry point
- * Description: print alphabet lowercase
+ * Description: print Holberton
  * Return: Always 0 (Success)
  */
 
