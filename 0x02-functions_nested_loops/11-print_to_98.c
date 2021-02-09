@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_to_98 - print 9 times table in certain format
+ * print_to_98 - print numbers from n to 98
  * @n: starting number
  */
 
