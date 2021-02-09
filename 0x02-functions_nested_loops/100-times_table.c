@@ -2,11 +2,10 @@
 
 /**
  * times_table - print n times table in certain format
- * @n: parameter for table times
- * Return: Always 0 (Success)
+ * @n: parameter for table times 
  */
 
-int times_table(int n)
+int print_times_table(int n)
 {
 	if (n > 15 || n < 0)
 		return (0);
