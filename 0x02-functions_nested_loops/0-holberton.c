@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+ * main - Entry point
+ * Description: print alphabet lowercase
+ * Return: Always 0 (Success)
+ */
+
 int main(){
 	char txt[] = "Holberton";
 	int i = 0;
