@@ -5,7 +5,7 @@
  * Return: Always 0 (Success)
  */
 
-int times_table(void)
+void times_table(void)
 {
 	int m_er, m_cand, col_1;
 
