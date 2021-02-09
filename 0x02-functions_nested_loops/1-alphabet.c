@@ -2,7 +2,7 @@
 
 /**
  * print_alphabet: function
- * Description: prin alphabet lowercase
+ * Description: print alphabet lowercase
  * Return: Always 0 (Success)
  */
 
