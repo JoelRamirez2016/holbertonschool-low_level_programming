@@ -8,7 +8,8 @@
 
 int main(void)
 {
-	int i, nextN, n1 = 1, n2 = 2;
+	int i; 
+	long int nextN, n1 = 1, n2 = 2;
 
 	for (i = 0; i <= 50; i++)
 	{
