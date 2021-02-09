@@ -7,10 +7,10 @@
 
 void print_times_table(int n)
 {
+	int m_er, m_cand, col_1;
+
 	if (n > 15 || n < 0)
 		return;
-
-	int m_er, m_cand, col_1;
 
 	for (m_er = 0; m_er <= n; m_er++)
 	{
