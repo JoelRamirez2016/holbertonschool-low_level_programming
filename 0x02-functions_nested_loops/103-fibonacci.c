@@ -9,16 +9,17 @@
 
 int main(void)
 {
-	int nextN, sumEven = 0, n1 = 1, n2 = 2;
+	int nextN, sumEven = 0, n1 = 1, n2 = 1;
 
 	while (nextN < 4000000)
 	{
 		nextN = n1 + n2;
 		n1 = n2;
 		n2 = nextN;
+		
 		if (nextN <= 4000000 && nextN % 2 == 0)
 			sumEven += nextN;
 	}
-	printf("%li\n", sumEven);
+	printf("%i\n", sumEven);
 	return (0);
 }
