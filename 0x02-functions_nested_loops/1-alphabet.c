@@ -1,17 +1,10 @@
-#include <stdlib.h>
-#include <_putchar.h>
-/**
- * main - Entry point
- * Description: print alphabet lowercase
- * Return: Always 0 (Success)
- *
- */
+#include <holberton.h>
 
-int main(void)
-{
-	print_alphabet();
-	return (0);
-}
+/**
+ * print_alphabet: function
+ * Description: prin alphabet lowercase
+ * Return: Always 0 (Success)
+ */
 
 void print_alphabet(void)
 {
