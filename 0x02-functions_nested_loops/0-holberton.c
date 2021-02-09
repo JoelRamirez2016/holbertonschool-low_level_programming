@@ -6,12 +6,13 @@
  * Return: Always 0 (Success)
  */
 
-int main(){
+int main(void)
+{
 	char txt[] = "Holberton";
 	int i = 0;
 
-	for (i = 0; txt[i] != '\0'; ++i)	
-		_putchar( txt[i] );
+	for (i = 0; txt[i] != '\0'; ++i)
+		_putchar(txt[i]);
 	_putchar('\n');
 	return (0);
 }
