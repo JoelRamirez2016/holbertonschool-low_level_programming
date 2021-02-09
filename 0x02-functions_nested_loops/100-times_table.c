@@ -34,7 +34,7 @@ void print_times_table(int n)
 				else
 					_putchar(' ');
 				if (decena && centena)
-					_putchar((decena / 10) + '0');
+					_putchar((decena % 10) + '0');
 				else if (decena)
 					_putchar(decena + '0');
 				else
