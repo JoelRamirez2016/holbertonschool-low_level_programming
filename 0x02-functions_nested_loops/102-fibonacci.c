@@ -11,7 +11,7 @@ int main(void)
 	int i;
 	long int nextN, n1 = 1, n2 = 2;
 
-	for (i = 0; i <= 50; i++)
+	for (i = 0; i < 50; i++)
 	{
 		if (i)
 			printf(", %li ", n1);
