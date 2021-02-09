@@ -23,7 +23,7 @@ int main(void)
  */
 int progresion(int n)
 {
-	int result = 1;
+	int i, result = 1;
 
 	for (i = 0; i < 1024; i++)
 		if (i % n == 0)
