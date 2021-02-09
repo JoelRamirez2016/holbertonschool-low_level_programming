@@ -15,5 +15,5 @@ int main(void)
 			result += i;
 
 	printf("%i", result);
-	return (result);
+	return (0);
 }
