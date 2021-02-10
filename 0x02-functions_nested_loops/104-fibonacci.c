@@ -2,7 +2,7 @@
 
 /**
  * main - Entry point
- * Description:  
+ * Description: print fibonacci to 98 numbers
  * Return: Always 0 (Success)
  */
 
@@ -36,9 +36,9 @@ int main(void)
 		n1_bot = n2_bot;
 		n2_top = nextN_top;
 		n2_bot = nextN_bot;
-        	i++;
-	}while (i < 99);
-	
+		i++;
+	} while (i < 99);
+
 	printf("\n");
 	return (0);
 }
