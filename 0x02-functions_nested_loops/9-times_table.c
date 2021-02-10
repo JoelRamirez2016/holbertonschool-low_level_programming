@@ -25,7 +25,6 @@ void times_table(void)
 					_putchar(' ');
 			}
 			_putchar(unidad + '0');
-			col_1++;
 		}
 		_putchar('\n');
 	}
