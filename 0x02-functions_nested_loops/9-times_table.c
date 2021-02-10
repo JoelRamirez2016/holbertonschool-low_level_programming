@@ -15,7 +15,7 @@ void times_table(void)
 			int decena = ((m_cand * m_er) / 10);
 			int unidad = ((m_cand * m_er) % 10);
 
-			if (m_er)
+			if (m_cand)
 			{
 				_putchar(',');
 				_putchar(' ');
