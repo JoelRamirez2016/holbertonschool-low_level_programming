@@ -6,7 +6,7 @@
  * Return: 1 if c is a digit or 0 otherwise
  */
 
-void print_number(int n)
+void print_number(long int n)
 {
 	if (n < 0)
 	{
