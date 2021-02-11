@@ -14,9 +14,9 @@ int main(void)
 	for (i = 1; i <= 100 ; i++)
 	{
 		if (!(i % 3))
-			printf("%s","Fizz");
+			printf("Fizz");
 		if (!(i % 5))
-			printf("%s","Buzz");
+			printf("Buzz");
 		if (i % 5 && i % 3)
 			printf("%i", i);
 		if (i != 100)
