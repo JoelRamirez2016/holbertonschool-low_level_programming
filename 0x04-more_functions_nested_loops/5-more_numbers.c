@@ -19,5 +19,6 @@ void more_numbers(void)
 				_putchar(decena + '0');
 			_putchar(unidad + '0');
 		}
-	_putchar('\n');
+		_putchar('\n');
+	}
 }
