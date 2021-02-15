@@ -1,4 +1,14 @@
-char * _strcpy(char *dest, char *src)
+#include "holberton.h"
+
+/**
+ * _strcpy - copies the string pointed to by src
+ * to the buffer pointed to by dest.
+ * @dest: pointer to save the string
+ * @src: string to save in desc
+ * Return: the new value saved in dest
+ */
+
+char *_strcpy(char *dest, char *src)
 {
 	int c;
 
