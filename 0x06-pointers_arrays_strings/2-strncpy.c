@@ -6,7 +6,7 @@
  * @n: number of max bytes for get from src
  * Return: the string copied
  */
-char *_strncpy(char *dest, char *src, int n);
+char *_strncpy(char *dest, char *src, int n)
 {
 	int i = 0;
 
