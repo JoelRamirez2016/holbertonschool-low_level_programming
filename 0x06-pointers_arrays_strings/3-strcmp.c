@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
  * _strcmp - compare two string
- * @dest: string to compare 
- * @src: string to compare
+ * @s1: string to compare
+ * @s2: string to compare
  * Return: the diference of chars's strings
  */
 int _strcmp(char *s1, char *s2)
