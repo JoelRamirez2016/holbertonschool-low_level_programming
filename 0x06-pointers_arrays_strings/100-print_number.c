@@ -19,6 +19,6 @@ void print_number(int n)
 	if (number_h)
 		print_number(number_h);
 
-	putchar(last_d + '0');
+	_putchar(last_d + '0');
 }
 
