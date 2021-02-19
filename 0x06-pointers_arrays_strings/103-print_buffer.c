@@ -13,17 +13,17 @@ void print_buffer(char *b, int size)
 	if (size <= 0)
 		printf("\n");
 
-	for (i = 0; i < size; i += 10, b += 10)
+	for (i = 0; i < size; i += 10)
 	{
 		printf("%08x ", i);
 
-		for (j = 0; j < 10; j += 2)
-			if (j + i < size)
+		for (j = i; j < 10 + i; j += 2)
+			if (j < size)
 				printf("%02x%02x ", b[j], b[j + 1]);
 			else
 				printf("     ");
 
-		for (j = 0; j < 10 && j + i < size; j++)
+		for (j = i; j < 10 + i && j < size; j++)
 			if (b[j] >= 32)
 				printf("%c", b[j]);
 			else
