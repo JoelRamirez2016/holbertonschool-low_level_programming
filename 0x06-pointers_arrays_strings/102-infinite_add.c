@@ -22,7 +22,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	r[size_r] = '\0';
 
-	while (i_n1 >= 0 || i_n2 >= 0)
+	while (i_n1 > 0 || i_n2 > 0)
 	{
 		i_n1--;
 		i_n2--;
@@ -46,6 +46,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		}
 	}
 	if (acumulador != 0)
-		r[size_r--] = acumulador + '0';
+		r[--size_r] = acumulador + '0';
 	return (r + size_r);
 }
