@@ -14,14 +14,14 @@ void print_buffer(char *b, int size)
 	{
 		printf("%08x ", i);
 
-		for (j = 0; j < 10; j+=2)
+		for (j = 0; j < 10; j += 2)
 			if (j + i < size)
-				printf("%02x%02x ", b[j], b[j+1] );
+				printf("%02x%02x ", b[j], b[j + 1]);
 			else
 				printf("     ");
 
-		for (j = 0; j < 10 && j+i < size; j++)
-			printf("%c", (b[j] >= 32) ? b[j] : '.' );
+		for (j = 0; j < 10 && j + i < size; j++)
+			printf("%c", (b[j] >= 32) ? b[j] : '.');
 
 		printf("\n");
 	}
