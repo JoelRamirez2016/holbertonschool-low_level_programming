@@ -10,9 +10,9 @@
 
 void print_diagsums(int *a, int size)
 {
-	int i, j, r1 = 0, r2 = 0;
+	int i, j, r1 = 0, r2 = 0, mx_s = size * size;
 
-	for (i = 0, j = size - 1; i < size * size && j < size * size; i += size + 1, j += size - 1)
+	for (i = 0, j = size - 1; i < mx_s && j < mx_s; i += size + 1, j += size - 1)
 	{
 		r1 += a[i];
 		r2 += a[j];
