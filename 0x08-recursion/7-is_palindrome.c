@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include "2-strlen_recursion.c"
 
 int is_palindrome_check(char *s, int i, int j);
 
@@ -23,24 +24,11 @@ int is_palindrome(char *s)
 
 int is_palindrome_check(char *s, int i, int j)
 {
-	if (s[i] == s[j])
-		is_palindrome_check(s, i + 1, j - 1);
-	else if (i >= j)
+	if (i < j)
+		if (s[i] == s[j])
+			return (is_palindrome_check(s, i + 1, j - 1));
+		else
+			return (0);
+	else
 		return (1);
-	else
-		return (0);
-}
-
-/**
- * _strlen_recursion - returns the length of a string.
- * @s: string to check size
- * Return: size of string
- */
-
-int _strlen_recursion(char *s)
-{
-	if (*s++)
-		return (1 + _strlen_recursion(s));
-	else
-		return (0);
 }
