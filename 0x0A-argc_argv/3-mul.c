@@ -27,6 +27,8 @@ int main(int argc, char *argv[])
 				number = (number * 10) + argv[i][j] - '0';
 			else if (argv[i][j] == '-')
 				sign = -1;
+			else
+				break;
 
 		product *= sign * number;
 	}
