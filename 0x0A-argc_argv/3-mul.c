@@ -10,7 +10,7 @@
 
 int main(int argc, char *argv[])
 {
-	int i, j, number, product = 1;
+	int i, j, number, product = 1, sign = 1;
 
 	if (argc < 3)
 	{
@@ -23,12 +23,14 @@ int main(int argc, char *argv[])
 		number = 0;
 
 		for (j = 0; argv[i][j]; j++)
-			number = (number * 10) + argv[i][j] - '0';
+			if ('0' <= argv[i][j] && argv[i][j] <= '9')
+				number = (number * 10) + argv[i][j] - '0';
+			else if (argv[i][j] == '-')
+				sign = -1;
 
-		product *= number;
+		product *= sign * number;
 	}
 
 	printf("%i\n", product);
 	return (0);
 }
-
