@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 
 	for (i = 0; cents > 0 && i < 5; i++)
 	{
-		numCoins = cents / coins[i];
+		numCoins += cents / coins[i];
 		cents = cents % coins[i];
 	}
 
