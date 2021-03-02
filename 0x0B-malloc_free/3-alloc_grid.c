@@ -33,9 +33,8 @@ int **alloc_grid(int width, int height)
 		}
 
 		for (j = 0; j < width; j++)
-			p_array[j] = 0;
+			p_matrix[i][j] = 0;
 
-		p_matrix[i] = p_array;
 	}
 	return (p_matrix);
 }
