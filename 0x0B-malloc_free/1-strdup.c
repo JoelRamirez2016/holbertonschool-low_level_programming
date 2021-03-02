@@ -17,13 +17,15 @@ char *_strdup(char *str)
 	if (!str)
 		return (0);
 
-	r = malloc(sizeof(char) * size);
+	r = malloc(sizeof(char) * (size + 1));
 
 	if (!r)
 		return (0);
 
 	for (i = 0; i < size; i++)
 		r[i] = str[i];
+
+	r[i] = '\0';
 
 	return (r);
 }
