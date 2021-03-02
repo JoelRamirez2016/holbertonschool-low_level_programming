@@ -1,15 +1,28 @@
 #include <stdlib.h>
 
+/**
+ * argstostr - concatenates all the arguments of the program
+ * @ac: size of av
+ * @av: user arguments of the program
+ * Return: string with the concatenated arguments.
+ */
+
 char *argstostr(int ac, char **av)
 {
 	int i, j, w, len = 0;
 	char *r;
 
+	if (!ac || !av)
+		return (0);
+
 	for (i = 0; i < ac; i++)
 		for (j = 0; av[i][j]; j++)
 			len++;
 
-	r = malloc(len);
+	r = malloc(sizeof(char) * (len + 1));
+
+	if (!r)
+		return (0);
 
 	for (i = 0, w = 0; i < ac; i++, w++)
 	{
@@ -18,6 +31,7 @@ char *argstostr(int ac, char **av)
 		r[w] = '\n';
 	}
 
+	r[i] = '\0';
 	return (r);
 }
 
