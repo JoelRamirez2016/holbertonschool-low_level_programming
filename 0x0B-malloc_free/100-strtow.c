@@ -13,7 +13,7 @@ char **strtow(char *str)
 	int i, j, w = 0, words = 0;
 	char **strings;
 
-	if (!*str)
+	if (!str || !str[0])
 		return (0);
 
 	for (i = 0; str[i]; i++)
