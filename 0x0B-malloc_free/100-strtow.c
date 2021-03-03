@@ -1,6 +1,7 @@
 #include <stdlib.h>
 
 char *_substring(char *string, int min_i, int max_i);
+void free_matrix(char **m, int size);
 
 /**
  * strtow - splits a string into words
@@ -40,9 +41,7 @@ char **strtow(char *str)
 
 					if (!strings[w])
 					{
-						for (; w >= 0; w--)
-							free(strings[w]);
-						free(strings);
+						free_matrix(strings, w);
 						return (0);
 					}
 					w++;
@@ -51,6 +50,22 @@ char **strtow(char *str)
 				}
 	strings[w] = NULL;
 	return (strings);
+}
+
+/**
+ * free_matrix - frees a 2 dimensional matrix created
+ * @m: matrix to free
+ * @size: length of the matrix
+ */
+
+void free_matrix(char **m, int size)
+{
+	int i;
+
+	for (i = 0; i < size; i++)
+		free(m[i]);
+
+	free(m);
 }
 
 /**
