@@ -15,7 +15,7 @@ char **strtow(char *str)
 	char **strings;
 
 	if (!str || !str[0])
-		return (0);
+		return (NULL);
 
 	for (i = 0; str[i]; i++)
 		if (str[i] != ' ')
@@ -30,7 +30,7 @@ char **strtow(char *str)
 	strings = malloc(sizeof(char *) * (words + 1));
 
 	if (!strings)
-		return (0);
+		return (NULL);
 
 	for (i = 0; str[i]; i++)
 		if (str[i] != ' ')
@@ -45,7 +45,7 @@ char **strtow(char *str)
 					if (!strings[w])
 					{
 						free_matrix(strings, w);
-						return (0);
+						return (NULL);
 					}
 					w++;
 					i = j;
@@ -90,7 +90,7 @@ char *_substring(char *string, int min_i, int max_i)
 	substring = malloc(sizeof(char) * (max_i - min_i + 1));
 
 	if (!substring)
-		return (0);
+		return (NULL);
 	for (i = 0; min_i < max_i &&  i < max_i; min_i++, i++)
 		substring[i] = string[min_i];
 	substring[i] = '\0';
