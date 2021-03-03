@@ -26,7 +26,7 @@ char **strtow(char *str)
 					break;
 				}
 
-	strings = (char **) malloc(words + 1);
+	strings = malloc(sizeof(char *) * (words + 1));
 
 	for (i = 0; str[i]; i++)
 		if (str[i] != ' ')
@@ -69,7 +69,7 @@ char *_substring(char *string, int min_i, int max_i)
 	if (min_i > max_i)
 		return (0);
 
-	substring = (char *) malloc(max_i - min_i);
+	substring = malloc(sizeof(char) * (max_i - min_i + 1));
 
 	if (!substring)
 		return (0);
