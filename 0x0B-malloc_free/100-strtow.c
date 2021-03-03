@@ -69,7 +69,7 @@ char *_substring(char *string, int min_i, int max_i)
 	if (min_i > max_i)
 		return (0);
 
-	substring = (char *) malloc(max_i - min_i + 1);
+	substring = (char *) malloc(max_i - min_i);
 
 	if (!substring)
 		return (0);
