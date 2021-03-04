@@ -11,20 +11,17 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int i;
 	char *p_array;
-	void *r;
 
 	if (nmemb == 0 || size == 0)
 		return (0);
 
-	r = malloc(nmemb * size);
+	p_array = malloc(nmemb * size);
 
-	if (!r)
+	if (!p_array)
 		return (0);
 
-	p_array = r;
-
 	for (i = 0; i < nmemb; i++)
-		p_array[i] = '\0';
+		p_array[i] = 0;
 
-	return (r);
+	return ((void *) p_array);
 }
