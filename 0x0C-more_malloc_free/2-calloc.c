@@ -9,8 +9,8 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int i = 0;
-	void *p_array;
+	unsigned int i;
+	char *p_array;
 
 	if (nmemb <= 0 || size <= 0)
 		return (0);
@@ -23,6 +23,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	for (i = 0; i < nmemb; i++)
 		p_array[i] = 0;
 
-	return (p_array);
+	return ((void *) p_array);
 }
 
