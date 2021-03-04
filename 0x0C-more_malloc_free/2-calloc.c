@@ -15,13 +15,15 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (nmemb <= 0 || size <= 0)
 		return (0);
 
-	p_array = malloc(nmemb * size);
+	p_array = malloc((nmemb + 1) * size);
 
 	if (!p_array)
 		return (0);
 
 	for (i = 0; i < nmemb; i++)
 		p_array[i] = 0;
+
+	p_array[i] = '\0';
 
 	return ((void *) p_array);
 }
