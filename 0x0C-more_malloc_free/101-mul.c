@@ -85,7 +85,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3 || !checkDigits(argv[1]) || !checkDigits(argv[2]))
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(98);
 	}
 	if (argv[1][0] == '0' || argv[2][0] == '0')
