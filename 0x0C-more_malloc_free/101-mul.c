@@ -8,8 +8,9 @@ int checkDigits(char *s);
 
 /**
  * _calloc - inicializate a block memory with '0'
- *
- * Return: Always 0.
+ * @nmemb: number of elements to create
+ * @size: size en bytes of the nmemb type
+ * Return: void pointer to the memory allocated.
  */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
@@ -31,6 +32,17 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	return ((void *) p_array);
 }
 
+/**
+ * mult_one - multiply 1 element X n elements and add to the r pointer
+ * @n: number of elements to create
+ * @n2: size en bytes of the nmemb type
+ * @r: t
+ * @len_n2: t
+ * @max_size: t
+ * @zs: t
+ * Return: void pointer to the memory allocated.
+ */
+
 void mult_one(char n, char *n2, char *r, int len_n2, int max_size, int zs)
 {
 	int i, j, suma, mul, val1, val2, a_m = 0, a_s = 0;
@@ -47,6 +59,14 @@ void mult_one(char n, char *n2, char *r, int len_n2, int max_size, int zs)
 	}
 	r[max_size - zs - j] = (a_m + a_s - (r[max_size - zs - j] - '0')) + '0';
 }
+
+
+/**
+ * multiplicar - multiply n1 elements X n2 elements
+ * @n1: t
+ * @n2: t
+ * Return: char pointer with the result
+ */
 
 char *multiplicar(char *n1, char *n2)
 {
@@ -68,6 +88,13 @@ char *multiplicar(char *n1, char *n2)
 	return (resultado);
 }
 
+
+/**
+ * checkDigits - find letters in a string
+ * @s: string to check
+ * Return: 0 if a letter is finded, 1 otherwise
+ */
+
 int checkDigits(char *s)
 {
 	int i;
@@ -79,6 +106,12 @@ int checkDigits(char *s)
 	return (1);
 }
 
+/**
+ * main - multiply two numbers
+ * @argc: number of elements of argv
+ * @argv: numbers to multiply
+ * Return: Always 0.
+ */
 int main(int argc, char *argv[])
 {
 	char *r;
