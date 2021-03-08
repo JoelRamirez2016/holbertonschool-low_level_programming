@@ -1,6 +1,12 @@
 #include "dog.h"
 #include <stdlib.h>
 
+/**
+ * _strcopy - copy a string
+ * @src: string to copy
+ * Return: the new dog created
+*/
+
 char *_strcopy(char *src)
 {
 	int i = 0, len = 0;
