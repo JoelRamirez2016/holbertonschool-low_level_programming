@@ -1,6 +1,8 @@
 #include "dog.h"
 #include <stdlib.h>
 
+char *_strcopy(char *src);
+
 /**
  * _strcopy - copy a string
  * @src: string to copy
@@ -46,17 +48,24 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (0);
 
 	my_dog = malloc(sizeof(dog_t));
+
+	if (!my_dog)
+		return (0);
+
 	cp_name = _strcopy(name);
+
+	if (!cp_name)
+	{
+		free(my_dog);
+		return (0);
+	}
+
 	cp_owner = _strcopy(owner);
 
-	if (!cp_name || !cp_owner || !my_dog)
+	if (!cp_owner)
 	{
-		if (my_dog)
-			free(my_dog);
-		if (cp_name)
-			free(cp_name);
-		if (cp_owner)
-			free(cp_owner);
+		free(cp_name);
+		free(my_dog);
 		return (0);
 	}
 
