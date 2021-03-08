@@ -32,9 +32,16 @@ char *_strcopy(char *src)
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *my_dog = malloc(sizeof(dog_t));
-	char *cp_name = _strcopy(name);
-	char *cp_owner = _strcopy(owner);
+	dog_t *my_dog;
+	char *cp_name;
+	char *cp_owner;
+
+	if (!name || age < 0 || !owner)
+		return (0);
+
+	my_dog = malloc(sizeof(dog_t));
+	cp_name = _strcopy(name);
+	cp_owner = _strcopy(owner);
 
 	if (!cp_name || !cp_owner || !my_dog)
 	{
@@ -44,7 +51,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 			free(cp_name);
 		if (cp_owner)
 			free(cp_owner);
-		return (0);       
+		return (0);
 	}
 
 	my_dog->name = name;
