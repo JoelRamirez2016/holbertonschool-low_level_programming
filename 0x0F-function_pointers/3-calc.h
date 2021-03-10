@@ -8,6 +8,8 @@
  * @f: The function associated
  */
 
+#include <stdlib.h>
+
 typedef struct op
 {
 	char *op;
