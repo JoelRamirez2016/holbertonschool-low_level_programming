@@ -1,7 +1,7 @@
 #ifndef VAR_FUNS
 #define VAR_FUNS
 
-#include <stdlib.h>
+#include <stdio.h>
 #include <stdarg.h>
 
 /**
