@@ -1,8 +1,8 @@
 ; assembly program that prints "Hello, Holberton\n"
 
 section	.text
-	global _start
-_start:
+	global main
+main:
 	mov	edx, len
 	mov	ecx, msg
 	mov	ebx, 1
