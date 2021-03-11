@@ -86,7 +86,7 @@ void _prints(va_list a)
 {
 	char *s = va_arg(a, char*);
 
-	if (!*s)
+	if (!s)
 		s = "(nil)";
 	printf("%s", s);
 }
