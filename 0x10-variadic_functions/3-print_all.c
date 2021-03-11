@@ -45,7 +45,7 @@ void _printi(va_list a)
 }
 void _printf(va_list a)
 {
-	printf("%f", va_arg(a, float));
+	printf("%f", va_arg(a, double));
 }
 void _printc(va_list a)
 {
