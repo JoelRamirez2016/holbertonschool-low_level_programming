@@ -10,4 +10,5 @@ main:
 	mov rdi, fmt    ;
 	mov rax, 0      ; printf is varargs, 
 	call printf
-	ret
+	mov rax, 1
+	syscall	
