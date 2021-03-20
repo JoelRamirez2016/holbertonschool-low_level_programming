@@ -1,14 +1,16 @@
-; assembly program that prints "Hello, Holberton\n"
+SECTION .data
+	msg:    db "Hello, Holberton", 0
+	fmt:    db "%s", 10, 0
 
-section	.text
+SECTION .text
+	extern printf
 	global main
 main:
-	mov	edx, len
-	mov	ecx, msg
-	mov	ebx, 1
-	mov	eax, 4
-	int	0x80
+	mov esi, msg    ; 64-bit ABI passing order starts w/ edi, esi, ...
+	mov edi, fmt    ;
+	mov eax, 0      ; printf is varargs, so EAX counts # of non-integer arguments being passed
+	call printf
 
-section	.data
-	msg	db	'Hello, Holberton',0xa
-	len	equ	$ - msg
+	mov ebx, 0      ; normal-exit code
+	mov eax, 1      ; process-termination service
+	ret
