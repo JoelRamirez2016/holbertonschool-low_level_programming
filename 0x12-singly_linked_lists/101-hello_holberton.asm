@@ -10,7 +10,4 @@ main:
 	mov rdi, fmt    ;
 	mov rax, 0      ; printf is varargs, 
 	call printf
-
-	mov rbx, 0      ; normal-exit code
-	mov rax, 1      ; process-termination service
 	ret
