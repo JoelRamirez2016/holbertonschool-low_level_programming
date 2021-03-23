@@ -8,11 +8,11 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *nodes[100];
+	const listint_t *nodes[1024];
 	size_t size = 0;
 	int i;
 
-	for (i = 0; i < 100; i++)
+	for (i = 0; i < 1024; i++)
 		nodes[i] = 0;
 
 	while (head)
