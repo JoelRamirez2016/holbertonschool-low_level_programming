@@ -10,8 +10,8 @@ size_t print_listint_safe(const listint_t *head)
 {
 	size_t size = 0;
 
-	if(!head)
-		exit(98);
+	if (!head)
+		return (0);
 
 	while (head && head->next < head)
 	{
