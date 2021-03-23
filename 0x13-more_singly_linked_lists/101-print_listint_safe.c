@@ -30,7 +30,6 @@ size_t print_listint_safe(const listint_t *head)
 		else
 		{
 			printf("-> [%p] %i\n", (void *) head, head->n);
-			size++;
 			break;
 		}
 	}
