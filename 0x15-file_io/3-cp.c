@@ -65,10 +65,10 @@ int main(int argc, char *argv[])
 		reading = read(opening_f1, buff, 1024);
 		writing = write(opening_f2, buff, reading);
 
-		if (reading == -1)
-			print_exception(98, argv[1]);
 		if (writing == -1)
 			print_exception(99, argv[2]);
+		if (reading == -1)
+			print_exception(98, argv[1]);
 
 	} while (reading > 0);
 
