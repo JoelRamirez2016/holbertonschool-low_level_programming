@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
 	if (opening_f1 == -1)
 		print_exception(98, argv[1]);
 
-	opening_f2 = open(argv[2], O_WRONLY | O_CREAT | O_APPEND,
+	opening_f2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC,
 			S_IWUSR | S_IRUSR | S_IWGRP | S_IRGRP | S_IROTH);
 
 	while ((reading = read(opening_f1, buff, 1024)) > 0)
