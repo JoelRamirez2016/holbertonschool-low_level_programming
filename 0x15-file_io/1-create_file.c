@@ -18,6 +18,9 @@ int create_file(const char *filename, char *text_content)
 
 	writing = write(opening, text_content, letters);
 
+	if (writing)
+		writing = 1;
+
 	close(opening);
 
 	return (writing);
