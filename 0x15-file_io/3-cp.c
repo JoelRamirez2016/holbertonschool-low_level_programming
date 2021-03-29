@@ -67,9 +67,7 @@ int main(int argc, char *argv[])
 
 		if (reading == -1)
 			print_exception(98, argv[1]);
-		else if (writing != -1)
-			writing = write(opening_f2, buff, reading);
-		else
+		if (writing == -1)
 			print_exception(99, argv[2]);
 
 	} while (reading > 0);
