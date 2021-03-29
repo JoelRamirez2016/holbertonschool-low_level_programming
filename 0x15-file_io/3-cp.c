@@ -61,11 +61,15 @@ int main(int argc, char *argv[])
 	opening_f2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC,
 			S_IWUSR | S_IRUSR | S_IWGRP | S_IRGRP | S_IROTH);
 
-	while ((reading = read(opening_f1, buff, 1024)) > 0)
-		if (writing != -1)
+	do {
+		reading = read(opening_f1, buff, 1024;
+
+		if (writing != -1 && reading != -1)
 			writing = write(opening_f2, buff, reading);
 		else
 			print_exception(99, argv[2]);
+
+	} while (reading > 0)
 
 	close_file(opening_f1);
 	close_file(opening_f2);
