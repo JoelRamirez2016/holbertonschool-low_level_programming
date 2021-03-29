@@ -47,7 +47,7 @@ void close_file(int f)
 
 int main(int argc, char *argv[])
 {
-	ssize_t opening_f1, opening_f2, reading, writing = 0;
+	ssize_t opening_f1, opening_f2, reading, writing;
 	char buff[1024];
 
 	if (argc != 3)
@@ -63,8 +63,11 @@ int main(int argc, char *argv[])
 
 	do {
 		reading = read(opening_f1, buff, 1024);
+		writing = write(opening_f2, buff, reading);
 
-		if (writing != -1 && reading != -1)
+		if (reading == -1)
+			print_exception(98, argv[1]);
+		else if (writing != -1)
 			writing = write(opening_f2, buff, reading);
 		else
 			print_exception(99, argv[2]);
