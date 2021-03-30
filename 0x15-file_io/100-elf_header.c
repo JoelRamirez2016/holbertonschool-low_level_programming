@@ -91,9 +91,9 @@ void version(unsigned char *e)
 void abi(unsigned char *e)
 {
 
-	printf("  OS/ABI:			    ");
+	printf("  OS/ABI:                            ");
 
-	switch (e_ident[EI_OSABI])
+	switch (e[EI_OSABI])
 	{
 		case ELFOSABI_NONE:
 			printf("UNIX - System V\n");
@@ -139,7 +139,7 @@ void abiV(unsigned char *e)
  * type - .
  * @e: pointer to first element array in elf-header
  */
-void type(unsigned char *e)
+void type(unsigned char __attribute__((__unused__)) *e)
 {
 
 }
@@ -147,7 +147,7 @@ void type(unsigned char *e)
  * entry - .
  * @e: pointer to first element array in elf-header
  */
-void entry(unsigned char *e)
+void entry(unsigned char __attribute__((__unused__)) *e)
 {
 
 }
@@ -160,11 +160,10 @@ void entry(unsigned char *e)
  * Return: Always 0
 */
 
-int main(int argc, char *argv[])
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	Elf64_Ehdr *header;
 	ssize_t opening, reading;
-	char errorM[] = "An error occurred while reading the file\n";
 
 	header = malloc(sizeof(Elf64_Ehdr));
 
@@ -196,4 +195,6 @@ int main(int argc, char *argv[])
 
 	free(header);
 	close(opening);
+
+	return (0);
 }
