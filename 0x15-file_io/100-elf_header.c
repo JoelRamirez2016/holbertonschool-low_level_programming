@@ -7,11 +7,11 @@ void data(unsigned char *);
 void version(unsigned char *);
 void abi(unsigned char *);
 void abiV(unsigned char *);
-void type(unsigned char *);
-void entry(unsigned char *);
+void type(short, unsigned char *);
+void entry(unsigned int, unsigned char *);
 
 /**
- * magic - .
+ * magic - Prints the magic numbers of ELF file
  * @e: pointer to first element array in elf-header
  */
 void magic(unsigned char *e)
@@ -25,7 +25,7 @@ void magic(unsigned char *e)
 	printf("\n");
 }
 /**
- * class - .
+ * class - Prints the class(32/64) of ELF file
  * @e: pointer to first element array in elf-header
  */
 void class(unsigned char *e)
@@ -43,10 +43,13 @@ void class(unsigned char *e)
 		case ELFCLASS64:
 			printf("ELF64\n");
 			break;
+		default:
+			printf("<unknown: %x>\n", e[EI_CLASS]);
+
 	}
 }
 /**
- * data - .
+ * data - Prints the architecture (little/Big endian) of the data in ELF file
  * @e: pointer to first element array in elf-header
  */
 void data(unsigned char *e)
@@ -64,10 +67,13 @@ void data(unsigned char *e)
 		case ELFDATA2MSB:
 			printf("2's complement, big endian\n");
 			break;
+		default:
+			printf("<unknown: %x>\n", e[EI_DATA]);
+
 	}
 }
 /**
- * version - .
+ * version - Prints the version of ELF file
  * @e: pointer to first element array in elf-header
  */
 void version(unsigned char *e)
@@ -85,7 +91,7 @@ void version(unsigned char *e)
 	}
 }
 /**
- * abi - .
+ * abi - Prints operating system and Application Binary Interface of ELF file
  * @e: pointer to first element array in elf-header
  */
 void abi(unsigned char *e)
@@ -125,10 +131,13 @@ void abi(unsigned char *e)
 		case ELFOSABI_STANDALONE:
 			printf("Standalone App\n");
 			break;
+		default:
+			printf("<unknown: %x>\n", e[EI_OSABI]);
+
 	}
 }
 /**
- * abiV - .
+ * abiV - Prints ABI version of ELF file
  * @e: pointer to first element array in elf-header
  */
 void abiV(unsigned char *e)
@@ -136,20 +145,55 @@ void abiV(unsigned char *e)
 	printf("  ABI Version:                       %d\n", e[EI_ABIVERSION]);
 }
 /**
- * type - .
+ * type -  Prints type of ELF file
+ * @e_tp: type of ELF file
  * @e: pointer to first element array in elf-header
  */
-void type(unsigned char __attribute__((__unused__)) *e)
+void type(short e_tp, unsigned char *e)
 {
+	if (e[EI_DATA] == ELFDATA2MSB)
+		e_tp >>= 8;
 
+	printf("  Type:                              ");
+
+	switch (e_tp)
+	{
+		case ET_NONE:
+			printf("NONE (None)\n");
+			break;
+		case ET_REL:
+			printf("REL (Relocatable file)\n");
+			break;
+		case ET_EXEC:
+			printf("EXEC (Executable file)\n");
+			break;
+		case ET_DYN:
+			printf("DYN (Shared object file)\n");
+			break;
+		case ET_CORE:
+			printf("CORE (Core file)\n");
+			break;
+		default:
+			printf("<unknown: %x>\n", e_tp);
+	}
 }
+
 /**
- * entry - .
+ * entry - Prints entry point addres of the ELF file process
+ * @e_ent: hex address if the ELF file process
  * @e: pointer to first element array in elf-header
  */
-void entry(unsigned char __attribute__((__unused__)) *e)
+void entry(unsigned int e_ent, unsigned char *e)
 {
+	printf("  Entry point address:               ");
 
+	if (e[EI_DATA] == ELFDATA2MSB)
+	{
+		e_ent = ((e_ent << 8) & 0xFF00FF00) |
+			  ((e_ent >> 8) & 0xFF00FF);
+		e_ent = (e_ent << 16) | (e_ent >> 16);
+	}
+	printf("%#x\n", (unsigned int) e_ent);
 }
 
 /**
@@ -190,11 +234,15 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	version(header->e_ident);
 	abi(header->e_ident);
 	abiV(header->e_ident);
-	type(header->e_ident);
-	entry(header->e_ident);
+	type(header->e_type, header->e_ident);
+	entry(header->e_entry, header->e_ident);
 
 	free(header);
-	close(opening);
 
+	if (close(opening) == -1)
+	{
+		dprintf(STDERR_FILENO, "An error occurred reading the file\n");
+		exit(98);
+	}
 	return (0);
 }
