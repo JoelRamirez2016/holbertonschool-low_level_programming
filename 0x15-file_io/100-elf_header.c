@@ -192,7 +192,7 @@ void entry(unsigned int e_ent, unsigned char *e)
 			((e_ent >> 8) & 0x0000ff00) |
 			((e_ent << 8) & 0x00ff0000) |
 			((e_ent << 24) & 0xff000000));
-	printf("%#x\n", (unsigned int) e_ent);
+	printf("%#lx\n", e_ent);
 }
 
 /**
