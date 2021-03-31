@@ -219,8 +219,8 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	opening = open(argv[1], O_RDONLY);
 	reading = read(opening, header, sizeof(Elf64_Ehdr));
 
-	if (reading == -1 || header->e_ident[1] != 'E'
-		|| header->e_ident[2] != 'L' || header->e_ident[3] != 'F')
+	if (reading == -1 && header->e_ident[1] != 'E'
+		&& header->e_ident[2] && 'L' && header->e_ident[3] != 'F')
 	{
 		dprintf(STDERR_FILENO, "An error occurred reading the file\n");
 		exit(98);
