@@ -1,6 +1,7 @@
 #include <elf.h>
 #include "holberton.h"
 
+void check_elf(unsigned char *);
 void magic(unsigned char *);
 void class(unsigned char *);
 void data(unsigned char *);
@@ -9,6 +10,22 @@ void abi(unsigned char *);
 void abiV(unsigned char *);
 void type(short, unsigned char *);
 void entry(unsigned long int, unsigned char *);
+
+/**
+ * check_elf - Checks if a file is an ELF file
+ * @e: pointer to first element array in elf-header
+ */
+
+void check_elf(unsigned char *e)
+{
+	if (e[0] != 127 && e[1] != 'E' &&
+		e[2] != 'L' &&
+		e[3] != 'F')
+	{
+		dprintf(STDERR_FILENO, "This isn't ELF File\n");
+		exit(98);
+	}
+}
 
 /**
  * magic - Prints the magic numbers of ELF file
@@ -220,16 +237,14 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	opening = open(argv[1], O_RDONLY);
 	reading = read(opening, header, sizeof(Elf64_Ehdr));
 
-	if (reading == -1 || (header->e_ident[0] != 127 && 
-		header->e_ident[1] != 'E' && 
-		header->e_ident[2] != 'L' &&
-		header->e_ident[3] != 'F'))
+	if (reading == -1)
 	{
 		dprintf(STDERR_FILENO, "An error occurred reading file\n");
 		exit(98);
 	}
 
 	printf("ELF Header:\n");
+	check_elf(header->e_ident);
 	magic(header->e_ident);
 	class(header->e_ident);
 	data(header->e_ident);
