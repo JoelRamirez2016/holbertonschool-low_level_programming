@@ -8,7 +8,7 @@ void version(unsigned char *);
 void abi(unsigned char *);
 void abiV(unsigned char *);
 void type(short, unsigned char *);
-void entry(unsigned int, unsigned char *);
+void entry(unsigned long int, unsigned char *);
 
 /**
  * magic - Prints the magic numbers of ELF file
@@ -183,7 +183,7 @@ void type(short e_tp, unsigned char *e)
  * @e_ent: hex address if the ELF file process
  * @e: pointer to first element array in elf-header
  */
-void entry(unsigned int e_ent, unsigned char *e)
+void entry(unsigned long int e_ent, unsigned char *e)
 {
 	printf("  Entry point address:               ");
 
