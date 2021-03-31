@@ -188,11 +188,10 @@ void entry(unsigned int e_ent, unsigned char *e)
 	printf("  Entry point address:               ");
 
 	if (e[EI_DATA] == ELFDATA2MSB)
-	{
-		e_ent = ((e_ent << 8) & 0xFF00FF00) |
-			  ((e_ent >> 8) & 0xFF00FF);
-		e_ent = (e_ent << 16) | (e_ent >> 16);
-	}
+		e_ent = (((e_ent >> 24) & 0x000000ff) |
+			((e_ent >> 8) & 0x0000ff00) |
+			((e_ent << 8) & 0x00ff0000) |
+			((e_ent << 24) & 0xff000000));
 	printf("%#x\n", (unsigned int) e_ent);
 }
 
