@@ -213,7 +213,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 
 	if (!header || argc != 2)
 	{
-		dprintf(STDERR_FILENO, "An error occurred: arguments\n");
+		dprintf(STDERR_FILENO, "An error occurred reading file\n");
 		exit(98);
 	}
 
@@ -223,7 +223,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	if (reading == -1 || header->e_ident[1] != 'E'
 		|| header->e_ident[2] != 'L' || header->e_ident[3] != 'F')
 	{
-		dprintf(STDERR_FILENO, "An error occurred: reading file\n");
+		dprintf(STDERR_FILENO, "An error occurred reading file\n");
 		exit(98);
 	}
 
@@ -241,7 +241,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 
 	if (close(opening) == -1)
 	{
-		dprintf(STDERR_FILENO, "An error occurred: closing file\n");
+		dprintf(STDERR_FILENO, "An error occurred reading file\n");
 		exit(98);
 	}
 	return (0);
