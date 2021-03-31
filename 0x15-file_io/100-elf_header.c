@@ -192,7 +192,16 @@ void entry(unsigned long int e_ent, unsigned char *e)
 			((e_ent >> 8) & 0x0000ff00) |
 			((e_ent << 8) & 0x00ff0000) |
 			((e_ent << 24) & 0xff000000));
-	printf("%#lx\n", e_ent);
+
+	switch (e[EI_CLASS])
+	{
+		case ELFCLASS32:
+			printf("%#x\n", (unsigned int) e_ent);
+			break;
+		case ELFCLASS64:
+			printf("%#lx\n", e_ent);
+			break;
+	}
 }
 
 /**
