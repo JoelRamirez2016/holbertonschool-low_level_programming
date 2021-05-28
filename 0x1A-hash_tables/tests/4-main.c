@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include "hash_tables.h"
+#include "../hash_tables.h"
 
 /**
  * main - check the code for Holberton School students.
@@ -10,9 +10,11 @@
  */
 int main(void)
 {
-    hash_table_t *ht;
-    char *value;
+    hash_table_t *ht = NULL;
+    char *value = NULL;
 
+    value = hash_table_get(ht, "python");
+    printf("%s:%s\n", "python", value);
     ht = hash_table_create(1024);
     hash_table_set(ht, "c", "fun");
     hash_table_set(ht, "python", "awesome");
