@@ -196,7 +196,7 @@ int insertSort(shash_table_t *ht, shash_node_t *shtn)
 	}
 	while (c)
 	{
-		if (*c->key > *shtn->key && !inserted)
+		if (strcmp(shtn->key, c->key) < 0 && !inserted)
 		{
 			shtn->sprev = c->sprev;
 			shtn->snext = c;
