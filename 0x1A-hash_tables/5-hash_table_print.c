@@ -10,19 +10,21 @@ void hash_table_print(const hash_table_t *ht)
 	int print_separator = 0;
 	hash_node_t *curr;
 
-	printf("{");
-
-	for (i = 0; i < ht->size; i++)
+	if(ht)
 	{
-		curr = ht->array[i];
-		while (curr)
+		printf("{");
+		for (i = 0; i < ht->size; i++)
 		{
-			if (print_separator)
-				printf(", ");
-			printf("'%s': '%s'", curr->key, curr->value);
-			print_separator = 1;
-			curr = curr->next;
+			curr = ht->array[i];
+			while (curr)
+			{
+				if (print_separator)
+					printf(", ");
+				printf("'%s': '%s'", curr->key, curr->value);
+				print_separator = 1;
+				curr = curr->next;
+			}
 		}
+		printf("}\n");
 	}
-	printf("}\n");
 }
