@@ -12,23 +12,20 @@ void print_array(int *array, size_t size);
 
 int binary_search(int *array, size_t size, int value)
 {
-	int mid;
+	int md;
 
 	if (!array || size == 0)
 		return (-1);
 
-	if (size % 2 == 0)
-		mid = size / 2;
-	else
-		mid = (size / 2) + 1;
+	md = size % 2 == 0 ? (size / 2) - 1: (size / 2);
 
 	print_array(array, size);
 
-	if (value < array[mid])
-		return (binary_search(array, mid - 1, value));
-	else if (value > array[mid])
-		return (binary_search(array + mid, size % 2 == 0 ? mid : mid - 1, value));
-	return (mid);
+	if (value < array[md])
+		return (binary_search(array, md, value));
+	else if (value > array[md])
+		return (binary_search(array + md + 1, size % 2 == 0 ? md + 1 : md, value));
+	return (md);
 }
 
 /**
