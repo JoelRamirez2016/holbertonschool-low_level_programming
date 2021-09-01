@@ -1,6 +1,7 @@
 #include "search_algos.h"
 
 void print_array(int *array, size_t size);
+int recursive_binary_search(int *array, size_t idx, size_t size, int value);
 
 /**
  * binary_search - searches for a value in a sorted array of integers
@@ -9,23 +10,28 @@ void print_array(int *array, size_t size);
  * @value: value to search for
  * Return: first index where value is located, otherwise -1
  */
-
 int binary_search(int *array, size_t size, int value)
 {
-	int md;
+	return recursive_binary_search(array, 0, size, value);
+}
+
+int recursive_binary_search(int *array, size_t idx, size_t size, int value)
+{
+	int md, next_size_r;
 
 	if (!array || size == 0)
 		return (-1);
 
-	md = size % 2 == 0 ? (size / 2) - 1: (size / 2);
+	md = size % 2 == 0 ? (size / 2) - 1 : (size / 2);
+	next_size_r = size % 2 == 0 ? md + 1 : md;
 
-	print_array(array, size);
+	print_array(array + idx, size);
 
-	if (value < array[md])
-		return (binary_search(array, md, value));
-	else if (value > array[md])
-		return (binary_search(array + md + 1, size % 2 == 0 ? md + 1 : md, value));
-	return (md);
+	if (value < array[idx + md])
+		return (recursive_binary_search(array, idx, md, value));
+	else if (value > array[idx + md])
+		return (recursive_binary_search(array, idx + md + 1, next_size_r, value));
+	return (idx);
 }
 
 /**
