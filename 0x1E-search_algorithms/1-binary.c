@@ -12,9 +12,17 @@ int recursive_binary_search(int *array, size_t idx, size_t size, int value);
  */
 int binary_search(int *array, size_t size, int value)
 {
-	return recursive_binary_search(array, 0, size, value);
+	return (recursive_binary_search(array, 0, size, value));
 }
 
+/**
+ * recursive_binary_search - searches for a value in a sorted array of integers
+ * @array: pointer to the first element of the array to search in
+ * @idx: index of the value finded
+ * @size: number of elements in array
+ * @value: value to search for
+ * Return: first index where value is located, otherwise -1
+ */
 int recursive_binary_search(int *array, size_t idx, size_t size, int value)
 {
 	int md, next_size_r;
